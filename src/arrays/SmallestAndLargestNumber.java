@@ -1,7 +1,5 @@
 package arrays;
 
-import com.sun.jdi.connect.Connector;
-
 import java.util.Scanner;
 
 public class SmallestAndLargestNumber {
