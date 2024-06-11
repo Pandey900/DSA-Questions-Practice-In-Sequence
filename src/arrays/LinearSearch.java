@@ -2,6 +2,7 @@ package arrays;
 
 import java.util.Scanner;
 
+//Time Complexity O(n)
 public class LinearSearch {
     public static int linearSearch(int n[],int key){
         for (int i=0;i<n.length;i++){
