@@ -6,7 +6,7 @@ public class SmallestAndLargestNumber {
     public static int smallestAndLargest(int n[]){
         int smallest= Integer.MAX_VALUE;
         int largest=Integer.MIN_VALUE;
-        for (int i=0;i<n.length;i++){
+        for(int i = 0; i<n.length; i++){
             if (smallest>n[i]){
                 smallest=n[i];
             }
