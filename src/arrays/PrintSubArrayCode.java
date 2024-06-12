@@ -7,7 +7,7 @@ public class PrintSubArrayCode {
         int ts=0;
         for (int i=0;i<n.length;i++){
             for (int j=i;j<n.length;j++){
-                for (int k=i;k<j;k++){
+                for (int k=i;k<=j;k++){
                     System.out.print(n[k]+" ");
                     ts++;
                 }
