@@ -10,7 +10,7 @@ public class MaxSubArraySumBruteForceCode {
         for (int i=0;i<n.length;i++){
             for (int j=i;j<n.length;j++){
                 currSum=0;
-                for (int k=i;k<j;k++){
+                for (int k=i;k<=j;k++){
                     System.out.print(n[k]+" ");
 //                    ts++;
                     currSum+=n[k];
