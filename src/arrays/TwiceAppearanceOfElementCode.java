@@ -4,14 +4,22 @@ import java.util.Scanner;
 
 public class TwiceAppearanceOfElementCode {
     public static boolean twiceAppearanceOfElement(int n[]){
-        for (int i=0;i< n.length-1; i++){
-            for (int j=i+1;j< n.length;j++){
-                if (n[i]==n[j]){
-                    return true;
-                }
+        int i=0;
+        for(int j=1;j<n.length;j++){
+            if (n[i]==n[j]){
+                return true;
             }
+            i++;
         }
         return false;
+//        for (int i=0;i< n.length-1; i++){
+//            for (int j=i+1;j< n.length;j++){
+//                if (n[i]==n[j]){
+//                    return true;
+//                }
+//            }
+//        }
+//        return false;
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
