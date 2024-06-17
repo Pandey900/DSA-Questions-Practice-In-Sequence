@@ -5,12 +5,17 @@ import java.util.Scanner;
 public class BubbleSortCode {
     public static void bubbleSort(int n[]){
         for (int turn=0;turn<n.length-1;turn++){
+            int swap=0;
             for (int j=0;j<n.length-1-turn;j++){
                 if (n[j]>n[j+1]){
                     int temp=n[j];
                     n[j]=n[j+1];
                     n[j+1]=temp;
+                    swap++;
                 }
+            }
+            if (swap==0){
+                break;
             }
         }
     }
