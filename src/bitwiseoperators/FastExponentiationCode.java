@@ -16,9 +16,9 @@ public class FastExponentiationCode {
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the value of a:");
+        System.out.println("Enter the value of A:");
         int a= sc.nextInt();
-        System.out.println("Enter the value of n:");
+        System.out.println("Enter the value of N:");
         int n= sc.nextInt();
         System.out.println("The value of " +a+ " to the Power " +n+ " is " +fastExpo(a,n));
     }
