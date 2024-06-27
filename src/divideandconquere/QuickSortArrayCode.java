@@ -19,7 +19,7 @@ public class QuickSortArrayCode {
     }
     public static int partition(int n[],int si,int ei){
         int pivot=n[ei];
-        int i=-1;
+        int i=si-1;
         for (int j=0;j<ei;j++){
             if (n[j]<=pivot){
                 i++;
