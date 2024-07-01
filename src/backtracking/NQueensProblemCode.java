@@ -17,7 +17,7 @@ public class NQueensProblemCode {
             }
         }
 //        diagonal right
-        for (int i=row-1,j=col+1;i>=0&&j<=0;i--,j++){
+        for (int i=row-1,j=col+1;i>=0&&j<board.length;i--,j++){
             if (board[i][j]=='Q'){
                 return false;
             }
@@ -26,7 +26,8 @@ public class NQueensProblemCode {
     }
     public static void nQueens(char board[][],int row){
         if (row== board.length){
-            prinBoard(board);
+            printBoard(board);
+            count++;
             return;
         }
         for (int j=0;j<board.length;j++){
@@ -38,7 +39,7 @@ public class NQueensProblemCode {
 
         }
     }
-    public static void prinBoard(char board[][]){
+    public static void printBoard(char board[][]){
         System.out.println("----------chess board-----------");
         for (int i=0;i<board.length;i++){
             for (int j=0;j<board.length;j++){
@@ -47,6 +48,7 @@ public class NQueensProblemCode {
             System.out.println();
         }
     }
+    static int count=0;
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter the value of N:");
@@ -59,5 +61,6 @@ public class NQueensProblemCode {
             }
         }
         nQueens(board,0);
+        System.out.println("Total Ways " +count);
     }
 }
