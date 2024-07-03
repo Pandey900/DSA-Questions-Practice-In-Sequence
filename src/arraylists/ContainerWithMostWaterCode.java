@@ -19,7 +19,7 @@ public class ContainerWithMostWaterCode {
 //        return max;
 //    }
 
-//    2 Pointer Approach
+//    2 Pointer Approach Code
     public static int mostWater(ArrayList<Integer> list){
         int max=0;
         int lp=0;
