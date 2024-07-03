@@ -1,16 +1,20 @@
 package arraylists;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ReverseArrayListCode {
 
     public static void main(String[] args) {
         ArrayList<Integer> list=new ArrayList<>();
-        list.add(12);
-        list.add(15);
-        list.add(9);
-        list.add(6);
-        list.add(18);
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the number of elements:");
+        int n= sc.nextInt();
+        for (int i=0;i<n;i++){
+            System.out.println("Enter element " + (i+1) + ":");
+            int element= sc.nextInt();
+            list.add(element);
+        }
         for (int i= list.size()-1;i>=0;i--){
             System.out.print(list.get(i)+" ");
         }
