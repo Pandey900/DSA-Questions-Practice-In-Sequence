@@ -225,10 +225,6 @@ public class LinkedList {
         return;
     }
 
-
-
-
-
 //    Print All The List
     public void print(){
 //        if (head==null){
@@ -246,6 +242,8 @@ public class LinkedList {
 
 
 
+
+
 //    Main Function
     public static void main(String[] args) {
         LinkedList ll=new LinkedList();
@@ -256,23 +254,25 @@ public class LinkedList {
         ll.print();
         ll.addFirst(1);
         ll.print();
-//        ll.addLast(5);
-//        ll.print();
-//        ll.addLast(6);
-//        ll.add(2,3);
-//        ll.print();
-////        System.out.println(ll.removeFirst());
-//        ll.removeFirst();
-//        ll.print();
-//        System.out.println(ll.removeLast());
-//        ll.print();
-//        System.out.println("Element Found At Index: " +ll.recSearch(4));
-//        ll.reverse();
+        ll.addLast(5);
+        ll.print();
+        ll.addLast(6);
+        ll.add(2,3);
+        ll.print();
+//        System.out.println(ll.removeFirst());
+        ll.removeFirst();
+        ll.print();
+        System.out.println(ll.removeLast());
+        ll.print();
+        System.out.println("Element Found At Index: " +ll.recSearch(4));
+        ll.reverse();
         ll.print();
         System.out.println(ll.isPalindrome());
-//        ll.removeNth(3);
-//        ll.print();
-//        ll.print();
-//        System.out.println("Size of the linked list is " +ll.size);
+        ll.removeNth(3);
+        ll.print();
+        ll.print();
+        System.out.println("Size of the linked list is " +ll.size);
+
+
     }
 }
