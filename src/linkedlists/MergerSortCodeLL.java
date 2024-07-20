@@ -9,7 +9,6 @@ public class MergerSortCodeLL {
             this.next = null;
         }
     }
-
     public static class LinkedList {
         public Node head;
         public Node tail;
@@ -84,6 +83,7 @@ public class MergerSortCodeLL {
             return merge(newLeft, newRight);
         }
     }
+
 
     public static void main(String[] args) {
         LinkedList ll = new LinkedList();
