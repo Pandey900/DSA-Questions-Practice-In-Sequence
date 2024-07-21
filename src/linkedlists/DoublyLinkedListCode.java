@@ -77,6 +77,21 @@ public class DoublyLinkedListCode {
         return val;
     }
 
+    public void reverse(){
+        Node curr=head;
+        Node prev=null;
+        Node next;
+        while (curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            curr.prev=next;
+
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+    }
+
     public void print() {
         Node temp = head;
         while (temp != null) {
@@ -109,5 +124,8 @@ public class DoublyLinkedListCode {
         System.out.println(dll.removeLast());
         dll.print();
         System.out.println("Size: " + dll.size);
+        dll.print();
+        dll.reverse();
+        dll.print();
     }
 }
