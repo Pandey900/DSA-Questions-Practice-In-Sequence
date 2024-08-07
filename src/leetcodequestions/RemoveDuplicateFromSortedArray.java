@@ -3,7 +3,7 @@ package leetcodequestions;
 import java.util.Scanner;
 
 public class RemoveDuplicateFromSortedArray {
-    public static int mergeSortedArray(int n[]){
+    public static int removeDuplicates(int n[]){
         int i=0;
         for (int j=1;j<n.length;j++){
             if (n[i]<n[j]) {
@@ -24,6 +24,6 @@ public class RemoveDuplicateFromSortedArray {
         for (int i=0;i<size;i++){
             n[i]= sc.nextInt();
         }
-        System.out.println(mergeSortedArray(n));
+        System.out.println(removeDuplicates(n));
     }
 }
