@@ -19,7 +19,7 @@ public class IndianCoinsProblemCode {
                 }
             }
         }
-        System.out.println("Elements which are used to find the min coins ara:"+ans);
+        System.out.println("Elements which are used to find the min coins are:"+ans);
         return count;
     }
     public static void main(String[] args) {
