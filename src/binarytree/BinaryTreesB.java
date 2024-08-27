@@ -28,6 +28,7 @@ public class BinaryTreesB {
             return newNode;
         }
 
+//        PreOrder Traversal Code
         public static void preOrder(Node root){
             if (root==null){
                 System.out.print("-1"+" ");
@@ -37,6 +38,28 @@ public class BinaryTreesB {
             System.out.print(root.data+" ");
             preOrder(root.left);
             preOrder(root.right);
+        }
+
+//        InOrder Traversal Code
+        public static void inOrder(Node root){
+            if (root==null){
+                System.out.print("-1"+" ");
+                return;
+            }
+            inOrder(root.left);
+            System.out.print(root.data+" ");
+            inOrder(root.right);
+        }
+
+//        PostOrder Traversal
+        public static void postOrder(Node root){
+            if (root==null){
+                System.out.print("-1"+" ");
+                return;
+            }
+            postOrder(root.left);
+            postOrder(root.right);
+            System.out.print(root.data+" ");
         }
     }
     public static void main(String[] args) {
@@ -51,6 +74,8 @@ public class BinaryTreesB {
         BinaryTree tree=new BinaryTree();
         Node root=tree.buildTree(node);
         System.out.println(root.data);
-        tree.preOrder(root);
+//        tree.preOrder(root);
+//        tree.inOrder(root);
+        tree.postOrder(root);
     }
 }
