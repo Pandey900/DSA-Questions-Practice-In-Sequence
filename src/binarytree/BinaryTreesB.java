@@ -27,6 +27,17 @@ public class BinaryTreesB {
             newNode.right=buildTree(node);
             return newNode;
         }
+
+        public static void preOrder(Node root){
+            if (root==null){
+                System.out.print("-1"+" ");
+                return;
+            }
+//            System.out.print(" ");
+            System.out.print(root.data+" ");
+            preOrder(root.left);
+            preOrder(root.right);
+        }
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
@@ -40,5 +51,6 @@ public class BinaryTreesB {
         BinaryTree tree=new BinaryTree();
         Node root=tree.buildTree(node);
         System.out.println(root.data);
+        tree.preOrder(root);
     }
 }
