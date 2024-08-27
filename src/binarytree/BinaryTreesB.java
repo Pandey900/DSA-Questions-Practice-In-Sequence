@@ -1,6 +1,7 @@
 package binarytree;
 
 import java.util.Scanner;
+import java.util.*;
 
 public class BinaryTreesB {
     static class Node{
@@ -51,6 +52,34 @@ public class BinaryTreesB {
             inOrder(root.right);
         }
 
+        public static void levelOrder(Node root){
+            if (root==null){
+                System.out.print("-1"+" ");
+                return;
+            }
+            Queue<Node> q=new LinkedList<>();
+            q.add(root);
+            q.add(null);
+            while (!q.isEmpty()){
+                Node currNode=q.remove();
+                if (currNode==null){
+                    System.out.println();
+                    if (q.isEmpty()) {
+                        break;
+                    }else {
+                        q.add(null);
+                    }
+                }else {
+                    System.out.print(currNode.data+" ");
+                    if (currNode.left!=null){
+                        q.add(currNode.left);
+                    }
+                    if (currNode.right!=null){
+                        q.add(currNode.right);
+                    }
+                }
+            }
+        }
 //        PostOrder Traversal
         public static void postOrder(Node root){
             if (root==null){
@@ -76,6 +105,7 @@ public class BinaryTreesB {
         System.out.println(root.data);
 //        tree.preOrder(root);
 //        tree.inOrder(root);
-        tree.postOrder(root);
+//        tree.postOrder(root);
+        tree.levelOrder(root);
     }
 }
