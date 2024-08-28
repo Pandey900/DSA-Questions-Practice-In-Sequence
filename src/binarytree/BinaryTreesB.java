@@ -121,6 +121,15 @@ public class BinaryTreesB {
 
 
 
+    public static int count(Node root){
+        if (root==null){
+            return 0;
+        }
+        int left_subTree=count(root.left);
+        int right_subTree=count(root.right);
+        return left_subTree+right_subTree+1;
+    }
+
     public static void main(String[] args) {
 //        Scanner sc=new Scanner(System.in);
 //        System.out.println("Enter the size of the node:");
@@ -157,5 +166,6 @@ public class BinaryTreesB {
         root.right.left=new Node(6);
         root.right.right=new Node(7);
         System.out.println(height(root));
+        System.out.println(count(root));
     }
 }
