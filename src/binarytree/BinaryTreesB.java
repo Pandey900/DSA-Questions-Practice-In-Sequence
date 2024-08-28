@@ -121,6 +121,7 @@ public class BinaryTreesB {
 
 
 
+//    Count Of Nodes In The Given Tree
     public static int count(Node root){
         if (root==null){
             return 0;
@@ -130,6 +131,14 @@ public class BinaryTreesB {
         return left_subTree+right_subTree+1;
     }
 
+
+//    Sum Of The Tree Nodes
+    public static int sum(Node root){
+        if (root==null) return 0;
+        int left_subTree_Sum=sum(root.left);
+        int right_subTree_Sum=sum(root.right);
+        return left_subTree_Sum+right_subTree_Sum+root.data;
+    }
     public static void main(String[] args) {
 //        Scanner sc=new Scanner(System.in);
 //        System.out.println("Enter the size of the node:");
@@ -167,5 +176,6 @@ public class BinaryTreesB {
         root.right.right=new Node(7);
         System.out.println(height(root));
         System.out.println(count(root));
+        System.out.println(sum(root));
     }
 }
