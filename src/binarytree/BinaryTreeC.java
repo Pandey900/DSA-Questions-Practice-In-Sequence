@@ -49,6 +49,34 @@ public class BinaryTreeC {
         int final_Ht=Math.max(left_diam.ht, right_diam.ht)+1;
         return new Info(final_Diam,final_Ht);
     }
+
+
+//    Checking If The Subtree is Present In The Tree Or Not
+    public static boolean isIdentical(Node node,Node subRoot){
+        if (node==null&&subRoot==null){
+            return true;
+        } else if (node==null||subRoot==null||node.data!= subRoot.data) {
+            return false;
+        }
+        if (!isIdentical(node.left,subRoot.left)){
+            return false;
+        }
+        if (!isIdentical(node.right,subRoot.right)){
+            return false;
+        }
+        return true;
+    }
+    public static boolean isSubTree(Node root,Node subRoot){
+        if (root==null){
+            return false;
+        }
+        if (root.data== subRoot.data){
+            if (isIdentical(root,subRoot)){
+                return true;
+            }
+        }
+        return isSubTree(root.left,subRoot)||isSubTree(root.right,subRoot);
+    }
     public static void main(String[] args) {
         Node root=new Node(1);
         root.left=new Node(2);
@@ -59,5 +87,9 @@ public class BinaryTreeC {
         root.right.right=new Node(7);
         System.out.println(height(root));
         System.out.println(diameter(root).diam);
+        Node subRoot=new Node(2);
+        subRoot.left=new Node(4);
+        subRoot.right=new Node(5);
+        System.out.println(isSubTree(root,subRoot));
     }
 }
