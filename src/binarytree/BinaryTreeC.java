@@ -176,6 +176,24 @@ public class BinaryTreeC {
         Node lca=p1.get(i-1);
         return lca;
     }
+
+
+
+//    LCA Second Approach In Less Space Complexity But Linear Time Complexity
+    public static Node lca2(Node root,int n1,int n2){
+        if (root==null||root.data==n1||root.data==n2){
+            return root;
+        }
+        Node leftNodes=lca2(root.left,n1,n2);
+        Node rightNodes=lca2(root.right,n1,n2);
+        if (leftNodes==null){
+            return rightNodes;
+        }
+        if (rightNodes==null){
+            return leftNodes;
+        }
+        return root;
+    }
     public static void main(String[] args) {
         Node root=new Node(1);
         root.left=new Node(2);
@@ -195,6 +213,7 @@ public class BinaryTreeC {
 //        int k=2;
 //        printKth(root,1,k);
         int n1=4,n2=5;
-        System.out.println(getLca(root,n1,n2).data);
+//        System.out.println(getLca(root,n1,n2).data);
+        System.out.println(lca2(root,n1,n2).data);
     }
 }
