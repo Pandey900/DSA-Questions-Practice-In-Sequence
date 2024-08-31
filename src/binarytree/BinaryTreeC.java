@@ -127,6 +127,19 @@ public class BinaryTreeC {
         System.out.println();
     }
 
+
+
+//    Kth Level Node value find
+
+    public static void printKth(Node root,int level,int k){
+        if (root==null) return;
+        if (level==k){
+            System.out.print(root.data+" ");
+        }
+        printKth(root.left,level+1,k);
+        printKth(root.right,level+1,k);
+    }
+
     public static void main(String[] args) {
         Node root=new Node(1);
         root.left=new Node(2);
@@ -143,5 +156,7 @@ public class BinaryTreeC {
 //        System.out.println(isSubTree(root,subRoot));
 
         topView(root);
+        int k=2;
+        printKth(root,1,k);
     }
 }
