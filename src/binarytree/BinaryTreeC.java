@@ -1,5 +1,9 @@
 package binarytree;
 
+
+import com.sun.source.tree.ArrayAccessTree;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -140,6 +144,38 @@ public class BinaryTreeC {
         printKth(root.right,level+1,k);
     }
 
+
+
+//    Lowest Common Ancestor
+
+    public static boolean getPath(Node root, int n, ArrayList<Node> p){
+        if (root==null) return false;
+        p.add(root);
+        if (root.data==n){
+            return true;
+        }
+        boolean getLeft=getPath(root.left,n,p);
+        boolean getRight=getPath(root.right,n,p);
+        if (getLeft||getRight){
+            return true;
+        }
+        p.remove(p.size()-1);
+        return false;
+    }
+    public static Node getLca(Node root,int n1,int n2){
+        ArrayList<Node> p1=new ArrayList<>();
+        ArrayList<Node> p2=new ArrayList<>();
+        getPath(root,n1,p1);
+        getPath(root,n2,p2);
+        int i=0;
+        for (;i<p1.size()&&i<p2.size();i++){
+            if (p1.get(i)!=p2.get(i)){
+                break;
+            }
+        }
+        Node lca=p1.get(i-1);
+        return lca;
+    }
     public static void main(String[] args) {
         Node root=new Node(1);
         root.left=new Node(2);
@@ -155,8 +191,10 @@ public class BinaryTreeC {
 //        subRoot.right=new Node(5);
 //        System.out.println(isSubTree(root,subRoot));
 
-        topView(root);
-        int k=2;
-        printKth(root,1,k);
+//        topView(root);
+//        int k=2;
+//        printKth(root,1,k);
+        int n1=4,n2=5;
+        System.out.println(getLca(root,n1,n2).data);
     }
 }
