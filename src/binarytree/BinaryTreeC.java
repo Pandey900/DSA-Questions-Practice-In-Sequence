@@ -3,6 +3,7 @@ package binarytree;
 
 import com.sun.source.tree.ArrayAccessTree;
 
+import java.awt.print.PrinterGraphics;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -261,14 +262,36 @@ public class BinaryTreeC {
         preorder(root.left);
         preorder(root.right);
     }
+
+    public static boolean invertedBinaryTreeCheck(Node root){
+        if (root==null){
+            return true;
+        }
+        if (root.left!=null&&root.data!=root.left.data){
+            return false;
+        }
+        if (root.right!=null&&root.data!=root.right.data){
+            return false;
+        }
+        return invertedBinaryTreeCheck(root.left)&&invertedBinaryTreeCheck(root.right);
+    }
     public static void main(String[] args) {
+//        Node root=new Node(1);
+//        root.left=new Node(2);
+//        root.right=new Node(3);
+//        root.left.left=new Node(4);
+//        root.left.right=new Node(5);
+//        root.right.left=new Node(6);
+//        root.right.right=new Node(7);
+
+
         Node root=new Node(1);
-        root.left=new Node(2);
-        root.right=new Node(3);
-        root.left.left=new Node(4);
-        root.left.right=new Node(5);
-        root.right.left=new Node(6);
-        root.right.right=new Node(7);
+        root.left=new Node(1);
+        root.right=new Node(1);
+        root.left.left=new Node(1);
+        root.left.right=new Node(1);
+        root.right.left=new Node(1);
+        root.right.right=new Node(1);
 //        System.out.println(height(root));
 //        System.out.println(diameter(root).diam);
 //        Node subRoot=new Node(2);
@@ -286,7 +309,9 @@ public class BinaryTreeC {
 //        int n=5,k=2;
 //        kthAncestor(root,n,k);
 
-        transform(root);
-        preorder(root);
+//        transform(root);
+//        preorder(root);
+
+        System.out.println(invertedBinaryTreeCheck(root));;
     }
 }
