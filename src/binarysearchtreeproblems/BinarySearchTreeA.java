@@ -9,6 +9,8 @@ public class BinarySearchTreeA {
             this.data=data;
         }
     }
+
+//    Insert Node In BinarySearch Tree
     public static Node insert(Node root,int val){
         if (root==null){
             root=new Node(val);
@@ -30,6 +32,9 @@ public class BinarySearchTreeA {
         inorder(root.right);
     }
 
+
+
+//    Search In Binary Search Tree
     public static boolean searchInBST(Node root,int key){
         if (root==null){
             return false;
@@ -45,6 +50,8 @@ public class BinarySearchTreeA {
     }
 
 
+
+//    Delete Node From Binary Search Tree
     public static Node deleteNode(Node root,int val){
         if (root.data>val){
             root.left=deleteNode(root.left,val);
@@ -73,6 +80,8 @@ public class BinarySearchTreeA {
         return root;
     }
 
+
+//    Print Nodes Present In The Given Range
     public static void printRange(Node root,int k1,int k2){
         if (root==null){
             return;
