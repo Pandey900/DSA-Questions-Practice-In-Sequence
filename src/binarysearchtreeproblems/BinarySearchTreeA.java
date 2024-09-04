@@ -121,9 +121,24 @@ public class BinarySearchTreeA {
         printRoot2Leaf(root.right,path);
         path.remove(path.size()-1);
     }
+
+
+
+//    Validate Binary Search Tree
+    public static boolean isValid(Node root,Node min,Node max){
+        if (root==null){
+            return true;
+        }
+        if (min!=null&&root.data<=min.data){
+            return false;
+        } else if (max!=null&&root.data>= max.data) {
+            return false;
+        }
+        return isValid(root.left,min,root)&&isValid(root.right,root,max);
+    }
     public static void main(String[] args) {
 //        int values[]={8,5,3,1,4,6,10,11,14};
-        int values[]={8,5,3,6,10,11,14};
+        int values[]={1,1,1,1};
         Node root=null;
         int val=5;
         for (int i=0;i<values.length;i++){
@@ -142,6 +157,12 @@ public class BinarySearchTreeA {
 //        inorder(root);
 //        System.out.println();
 //        printRange(root,5,12);
-        printRoot2Leaf(root,new ArrayList<>());
+//        printRoot2Leaf(root,new ArrayList<>());
+
+        if (isValid(root,null,null)){
+            System.out.println("Valid");
+        }else {
+            System.out.println("Not Valid");
+        }
     }
 }
