@@ -155,6 +155,18 @@ public class BinarySearchTreeA {
         return root;
     }
 
+
+    public static Node createMinBST(int arr[],int si,int ei){
+        if (si>ei){
+            return null;
+        }
+        int mid=(si+ei)/2;
+        Node root=new Node(arr[mid]);
+        root.left=createMinBST(arr,si,mid-1);
+        root.right=createMinBST(arr,mid+1,ei);
+        return root;
+    }
+
 //    PreOrder
     public static void preorder(Node root){
         if (root==null){
@@ -213,15 +225,19 @@ public class BinarySearchTreeA {
 //        }
 
 
-        Node root = new Node(1);
-        root. left = new Node(2);
-        root. right = new Node(2);
-        root. left. left = new Node(3);
-        root. left. right = new Node (4);
-        root. right. right = new Node(3);
-        root.right.left=new Node(4);
+//        Node root = new Node(1);
+//        root. left = new Node(2);
+//        root. right = new Node(2);
+//        root. left. left = new Node(3);
+//        root. left. right = new Node (4);
+//        root. right. right = new Node(3);
+//        root.right.left=new Node(4);
 //        mirror(root);
 //        preorder(root);
-        System.out.println(isSymmetric(root));
+//        System.out.println(isSymmetric(root));
+
+        int arr[]={3,5,6,8,10,11,12};
+        Node root=createMinBST(arr,0,arr.length-1);
+        preorder(root);
     }
 }
