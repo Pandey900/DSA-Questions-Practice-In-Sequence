@@ -1,5 +1,7 @@
 package binarysearchtreeproblems;
 
+import binarytree.BinaryTreeC;
+
 import java.util.ArrayList;
 
 public class BinarySearchTreeA {
@@ -9,6 +11,7 @@ public class BinarySearchTreeA {
         Node right;
         Node(int data){
             this.data=data;
+            this.left=this.right=null;
         }
     }
 
@@ -136,15 +139,40 @@ public class BinarySearchTreeA {
         }
         return isValid(root.left,min,root)&&isValid(root.right,root,max);
     }
+
+
+
+
+//    Mirror Of A BST
+    public static Node mirror(Node root){
+        if(root==null){
+            return null;
+        }
+        Node left_Subtree=mirror(root.left);
+        Node right_Subtree=mirror(root.right);
+        root.left=right_Subtree;
+        root.right=left_Subtree;
+        return root;
+    }
+
+//    PreOrder
+    public static void preorder(Node root){
+        if (root==null){
+            return;
+        }
+        System.out.print(root.data+" ");
+        preorder(root.left);
+        preorder(root.right);
+    }
     public static void main(String[] args) {
 //        int values[]={8,5,3,1,4,6,10,11,14};
-        int values[]={1,1,1,1};
-        Node root=null;
-        int val=5;
-        for (int i=0;i<values.length;i++){
-            root=insert(root, values[i]);
-        }
-        inorder(root);
+//        int values[]={1,1,1,1};
+//        Node root=null;
+//        int val=5;
+//        for (int i=0;i<values.length;i++){
+//            root=insert(root, values[i]);
+//        }
+//        inorder(root);
 //        System.out.println();
 //        if (searchInBST(root,key)){
 //            System.out.println("Found");
@@ -153,16 +181,26 @@ public class BinarySearchTreeA {
 //        }
 
 //        deleteNode(root,val);
-        System.out.println();
+//        System.out.println();
 //        inorder(root);
 //        System.out.println();
 //        printRange(root,5,12);
 //        printRoot2Leaf(root,new ArrayList<>());
 
-        if (isValid(root,null,null)){
-            System.out.println("Valid");
-        }else {
-            System.out.println("Not Valid");
-        }
+//        if (isValid(root,null,null)){
+//            System.out.println("Valid");
+//        }else {
+//            System.out.println("Not Valid");
+//        }
+
+
+        Node root = new Node(8);
+        root. left = new Node(5);
+        root. right = new Node(10);
+        root. left. left = new Node(3);
+        root. left. right = new Node (6);
+        root. right. right = new Node(11);
+        mirror(root);
+        preorder(root);
     }
 }
