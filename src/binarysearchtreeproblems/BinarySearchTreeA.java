@@ -156,6 +156,7 @@ public class BinarySearchTreeA {
     }
 
 
+//    Balanced And Minimum Binary Tree Using Sorted Array
     public static Node createMinBST(int arr[],int si,int ei){
         if (si>ei){
             return null;
