@@ -164,6 +164,25 @@ public class BinarySearchTreeA {
         preorder(root.left);
         preorder(root.right);
     }
+
+
+
+//    IsSymmteric Check Of The BinarySearch Tree
+    public static boolean isSymmetric(Node root){
+        if (root==null){
+            return true;
+        }
+        return isMirror(root.left,root.right);
+    }
+    public static boolean isMirror(Node left,Node right){
+        if (left==null&&right==null){
+            return true;
+        }
+        if (left==null||right==null){
+            return false;
+        }
+        return (left.data==right.data)&&isMirror(left.left,right.right)&&isMirror(left.right,right.left);
+    }
     public static void main(String[] args) {
 //        int values[]={8,5,3,1,4,6,10,11,14};
 //        int values[]={1,1,1,1};
@@ -194,13 +213,15 @@ public class BinarySearchTreeA {
 //        }
 
 
-        Node root = new Node(8);
-        root. left = new Node(5);
-        root. right = new Node(10);
+        Node root = new Node(1);
+        root. left = new Node(2);
+        root. right = new Node(2);
         root. left. left = new Node(3);
-        root. left. right = new Node (6);
-        root. right. right = new Node(11);
-        mirror(root);
-        preorder(root);
+        root. left. right = new Node (4);
+        root. right. right = new Node(3);
+        root.right.left=new Node(4);
+//        mirror(root);
+//        preorder(root);
+        System.out.println(isSymmetric(root));
     }
 }
