@@ -1,7 +1,6 @@
 package binarysearchtreeproblems;
 
 import binarytree.BinaryTreeC;
-
 import java.util.ArrayList;
 
 public class BinarySearchTreeA {
@@ -196,6 +195,37 @@ public class BinarySearchTreeA {
         }
         return (left.data==right.data)&&isMirror(left.left,right.right)&&isMirror(left.right,right.left);
     }
+
+
+
+//    Convert BST TO Balanced BST
+    public static Node getInorder(Node root,ArrayList<Integer> inorder){
+        if (root==null){
+            return null;
+        }
+        getInorder(root.left,inorder);
+        inorder.add(root.data);
+        getInorder(root.right,inorder);
+        return root;
+    }
+    public static Node createBST(ArrayList<Integer> inorder, int si, int ei){
+        if (si>ei){
+            return null;
+        }
+        int mid=(si+ei)/2;
+        Node root=new Node(inorder.get(mid));
+        root.left=createBST(inorder,si,mid-1);
+        root.right=createBST(inorder,mid+1,ei);
+        return root;
+    }
+
+    public static Node balancedBST(Node root){
+        ArrayList<Integer> inorder=new ArrayList<>();
+        getInorder(root,inorder);
+
+        root=createBST(inorder,0,inorder.size()-1);
+        return root;
+    }
     public static void main(String[] args) {
 //        int values[]={8,5,3,1,4,6,10,11,14};
 //        int values[]={1,1,1,1};
@@ -237,8 +267,19 @@ public class BinarySearchTreeA {
 //        preorder(root);
 //        System.out.println(isSymmetric(root));
 
-        int arr[]={3,5,6,8,10,11,12};
-        Node root=createMinBST(arr,0,arr.length-1);
+//        int arr[]={3,5,6,8,10,11,12};
+//        Node root=createMinBST(arr,0,arr.length-1);
+//        preorder(root);
+
+        Node root=new Node(8);
+        root.left=new Node(6);
+        root.left.left=new Node(5);
+        root.left.left.left=new Node(3);
+
+        root.right=new Node(10);
+        root.right.right=new Node(11);
+        root.right.right.right=new Node(12);
+        root=balancedBST(root);
         preorder(root);
     }
 }
