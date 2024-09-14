@@ -2,6 +2,9 @@ package geeksforgeekscongnizant.ArraysQuestions;
 
 public class SecondLargestElementProblemCode {
     public static int secondLargestElement(int arr[]){
+        if (arr.length<2){
+            return -1;
+        }
         int first=Integer.MIN_VALUE;
         int second=Integer.MIN_VALUE;
         for (int i=0;i<arr.length;i++){
