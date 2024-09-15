@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class DeloitteAllPossibleLeftRotationSolution {
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
-            String str = scanner.next();
+            long number= scanner.nextLong();
             scanner.close();
-
+            String str=""+number;
             StringBuilder result = new StringBuilder();
             int len = str.length();
 
