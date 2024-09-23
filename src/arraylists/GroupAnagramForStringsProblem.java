@@ -20,8 +20,11 @@ public class GroupAnagramForStringsProblem {
                 map.put(s,a);
             }
         }
-        for (Map.Entry<String,List<String>> x: map.entrySet()){
-            ans.add(x.getValue());
+        List<String> keys = new ArrayList<>(map.keySet()); // Get all the keys in a list
+        for (int i = 0; i < keys.size(); i++) {
+            String key = keys.get(i);            // Get the key (sorted version of a word)
+            List<String> group = map.get(key);   // Get the list of anagrams for that key
+            ans.add(group);                      // Add the group of anagrams to the answer list
         }
         return ans;
     }
