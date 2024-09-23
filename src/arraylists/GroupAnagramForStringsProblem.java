@@ -20,11 +20,11 @@ public class GroupAnagramForStringsProblem {
                 map.put(s,a);
             }
         }
-        List<String> keys = new ArrayList<>(map.keySet()); // Get all the keys in a list
+        List<String> keys = new ArrayList<>(map.keySet());
         for (int i = 0; i < keys.size(); i++) {
-            String key = keys.get(i);            // Get the key (sorted version of a word)
-            List<String> group = map.get(key);   // Get the list of anagrams for that key
-            ans.add(group);                      // Add the group of anagrams to the answer list
+            String key = keys.get(i);
+            List<String> group = map.get(key);
+            ans.add(group);
         }
         return ans;
     }
