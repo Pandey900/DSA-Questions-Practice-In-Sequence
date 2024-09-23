@@ -1,11 +1,11 @@
-package leetcodequestions;
+package geeksforgeekscongnizant.ArraysQuestions;
 
 import java.util.PriorityQueue;
 
-public class KLargestElementCode {
+public class KLargestElementInArrayProblem {
     public static int kLargestElement(int arr[],int k){
         PriorityQueue<Integer> pq=new PriorityQueue<>();
-        for (int i=0;i< arr.length;i++){
+        for (int i=0;i<arr.length;i++){
             pq.add(arr[i]);
             if (pq.size()>k){
                 pq.remove();
