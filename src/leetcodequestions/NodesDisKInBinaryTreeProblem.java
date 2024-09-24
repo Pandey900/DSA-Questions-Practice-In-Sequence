@@ -47,7 +47,6 @@ public class NodesDisKInBinaryTreeProblem {
             return 1 + dl;
         }
 
-        // Check if target is in the right subtree
         int dr = printKDistanceNode(root.right, target, k);
         if (dr != -1) {
             if (dr + 1 == k) {
