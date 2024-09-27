@@ -80,12 +80,24 @@ public class AdvancedPatterns {
             System.out.println();
         }
     }
+    public static void solidRhombus(int n){
+        for (int i=0;i<=n;i++){
+            for (int j=0;j<=(n-i);j++){
+                System.out.print(" ");
+            }
+            for (int j=0;j<=n;j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
     public static void main(String[] args) {
 //        hollowRectangle(4,5);
 //        invertedAndHalfPyramid(4);
 //        invertedAndHalfPyramidNumber(5);
 //        floydTriangle(4);
 //        zero_one_Triangle(4);
-        butterFlyPattern(5);
+//        butterFlyPattern(5);
+        solidRhombus(5);
     }
 }
