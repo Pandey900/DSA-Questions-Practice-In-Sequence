@@ -46,7 +46,7 @@ public class CountUniqueSubStringsProblem {
         return count+1;
     }
     public static void main(String[] args) {
-        String str="ababa";
+        String str="apple";
         for (int i=0;i<str.length();i++){
             String suffix=str.substring(i);
             insert(suffix);
