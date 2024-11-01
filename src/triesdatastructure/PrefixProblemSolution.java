@@ -46,6 +46,7 @@ public class PrefixProblemSolution {
             insert(arr[i]);
         }
         root.freq=-1;
+
         findPrefix(root,"");
     }
 }
