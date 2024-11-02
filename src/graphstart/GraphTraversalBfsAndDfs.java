@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class BreadthFirstSearchCode {
+public class GraphTraversalBfsAndDfs {
     static class Edge{
         int src;
         int dest;
@@ -60,10 +60,23 @@ public class BreadthFirstSearchCode {
             }
         }
     }
+
+    public static void dfs(ArrayList<Edge> graph[],int curr,boolean visited[]){
+        System.out.print(curr+" ");
+        visited[curr]=true;
+        for (int i=0;i<graph[curr].size();i++){
+            Edge e=graph[curr].get(i);
+            if (!visited[e.dest]){
+                dfs(graph, e.dest, visited);
+            }
+        }
+    }
     public static void main(String[] args) {
         int vertex=7;
         ArrayList<Edge> graph[]=new ArrayList[vertex];
         createGraph(graph);
         bfs(graph);
+        System.out.println();
+        dfs(graph,0,new boolean[vertex]);
     }
 }
