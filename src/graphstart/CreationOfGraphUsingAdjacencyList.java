@@ -14,14 +14,12 @@ public class CreationOfGraphUsingAdjacencyList {
         }
     }
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);
-        System.out.println("Enter the number of vertex : ");
-        int vertex= sc.nextInt();
+        int vertex=5;
         ArrayList<Edge>[] graph=new ArrayList[vertex];
         for (int i=0;i<vertex;i++){
             graph[i]=new ArrayList<>();
         }
-//        0-Vertex
+        //        0-Vertex
         graph[0].add(new Edge(0,1,5));
 
 //        1-Vertex
@@ -40,8 +38,6 @@ public class CreationOfGraphUsingAdjacencyList {
 
 //        4-Vertex
         graph[4].add(new Edge(4,2,2));
-
-
 //        2's Neighbour
         for (int i=0;i<graph[2].size();i++){
             Edge e=graph[2].get(i);
