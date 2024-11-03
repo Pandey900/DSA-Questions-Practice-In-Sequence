@@ -45,8 +45,15 @@ public class GraphTraversalBfsAndDfs {
         graph[6].add(new Edge(6,5,1));
     }
     public static void bfs(ArrayList<Edge> graph[]){
+        boolean vis[]=new boolean[graph.length];
+        for (int i=0;i<graph.length;i++){
+            if (!vis[i]){
+                bfsUtil(graph,vis);
+            }
+        }
+    }
+    public static void bfsUtil(ArrayList<Edge> graph[],boolean visited[]){
         Queue<Integer> q=new LinkedList<>();
-        boolean visited[]=new boolean[graph.length];
         q.add(0);
         while (!q.isEmpty()){
             int curr=q.remove();
@@ -61,13 +68,19 @@ public class GraphTraversalBfsAndDfs {
         }
     }
 
-    public static void dfs(ArrayList<Edge> graph[],int curr,boolean visited[]){
+    public static void dfs(ArrayList<Edge> graph[]){
+        boolean visited[]=new boolean[graph.length];
+        for (int i=0;i<graph.length;i++){
+            dfsUtil(graph,i,visited);
+        }
+    }
+    public static void dfsUtil(ArrayList<Edge> graph[],int curr,boolean visited[]){
         System.out.print(curr+" ");
         visited[curr]=true;
         for (int i=0;i<graph[curr].size();i++){
             Edge e=graph[curr].get(i);
             if (!visited[e.dest]){
-                dfs(graph, e.dest, visited);
+                dfsUtil(graph, e.dest, visited);
             }
         }
     }
