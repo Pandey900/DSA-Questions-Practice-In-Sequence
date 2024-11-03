@@ -71,7 +71,9 @@ public class GraphTraversalBfsAndDfs {
     public static void dfs(ArrayList<Edge> graph[]){
         boolean visited[]=new boolean[graph.length];
         for (int i=0;i<graph.length;i++){
-            dfsUtil(graph,i,visited);
+            if (!visited[i]){
+                dfsUtil(graph,i,visited);
+            }
         }
     }
     public static void dfsUtil(ArrayList<Edge> graph[],int curr,boolean visited[]){
@@ -104,7 +106,7 @@ public class GraphTraversalBfsAndDfs {
         createGraph(graph);
         bfs(graph);
         System.out.println();
-        dfs(graph,0,new boolean[vertex]);
+        dfs(graph);
         System.out.println();
         System.out.println(hasPath(graph,0,5,new boolean[vertex]));
     }
