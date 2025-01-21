@@ -67,6 +67,7 @@ public class ReverseNodeInKThGroups {
     }
     public static void main(String[] args) {
         ReverseNodeInKThGroups ll=new ReverseNodeInKThGroups();
+        ll.addFirst(8);
         ll.addFirst(7);
         ll.addFirst(6);
         ll.addFirst(5);
