@@ -1,0 +1,36 @@
+package practiceFromStart;
+
+import java.util.Scanner;
+
+public class RotateArrayInKthGroup {
+    public static void rotateKthGroup(int arr[],int k){
+        int n= arr.length-1;
+        k %=n;
+        reverse(arr,0,n);
+        reverse(arr,0,k-1);
+        reverse(arr,k,n);
+    }
+    public static void reverse(int arr[],int left,int right){
+        while (left<right){
+            int temp=arr[left];
+            arr[left]=arr[right];
+            arr[right]=temp;
+            left++;
+            right--;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the size of the array:");
+        int size= sc.nextInt();
+        int arr[]=new int[size];
+        System.out.println("Enter the elements of the array:");
+        for (int i=0;i<size;i++){
+            arr[i]= sc.nextInt();
+        }
+        rotateKthGroup(arr,3);
+        for (int i=0;i< arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
