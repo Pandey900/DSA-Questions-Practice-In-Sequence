@@ -4,27 +4,32 @@ import java.util.Scanner;
 
 public class LongestPalindromicSubString {
     public static String longestPalindrome(String str){
-        if (str==null || str.length()<1){
-            return "";
-        }
-        int low=0,high=0;
+        int start=0,end=1;
+        int l=0,r=0;
         for (int i=0;i<str.length();i++){
-            int length1=expandAroundCenter(str,i,i);
-            int length2=expandAroundCenter(str,i,i+1);
-            int maxLength=Math.max(length1,length2);
-            if (maxLength>high-low) {
-                low = i - (maxLength - 1) / 2;
-                high = i + maxLength / 2;
+//            For Even
+            l=i;
+            r=i+1;
+            while (l>=0 && r<str.length() && str.charAt(l)==str.charAt(r)){
+                if (r-l+1>end){
+                    start=l;
+                    end=r-l+1;
+                }
+                l--;
+                r++;
+            }
+            l=i-1;
+            r=i+1;
+            while (l>=0 && r<str.length() && str.charAt(l)==str.charAt(r)){
+                if (r-l+1>end){
+                    start=l;
+                    end=r-l+1;
+                }
+                l--;
+                r++;
             }
         }
-        return str.substring(low,high+1);
-    }
-    public static int expandAroundCenter(String str,int low,int high){
-        while (low>=0 && high<str.length() && str.charAt(low)==str.charAt(high)){
-            low--;
-            high++;
-        }
-        return high-low-1;
+        return str.substring(start,start+end);
     }
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
