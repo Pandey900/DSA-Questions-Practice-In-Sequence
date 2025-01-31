@@ -18,6 +18,7 @@ public class LongestPalindromicSubString {
                 l--;
                 r++;
             }
+//            For ODD
             l=i-1;
             r=i+1;
             while (l>=0 && r<str.length() && str.charAt(l)==str.charAt(r)){
