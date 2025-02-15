@@ -297,20 +297,20 @@ public class OOPSPractice {
 
 
 //Abstract Class
-abstract class Animal{
-    void eat(){
-        System.out.println("Animal Eats");
-    }
-//    We did not write the implementation in this method so it is abstract method, abstract methods are those methods which do not have implementation
-    abstract void walk();
-}
-class Horse extends Animal{
-    void walk(){
-        System.out.println("Walks On 4 Legs");
-    }
-}
-class Chicken extends Animal{
-    void walk(){
-        System.out.println("Walks On 2 legs");
-    }
-}
+//abstract class Animal{
+//    void eat(){
+//        System.out.println("Animal Eats");
+//    }
+////    We did not write the implementation in this method so it is abstract method, abstract methods are those methods which do not have implementation
+//    abstract void walk();
+//}
+//class Horse extends Animal{
+//    void walk(){
+//        System.out.println("Walks On 4 Legs");
+//    }
+//}
+//class Chicken extends Animal{
+//    void walk(){
+//        System.out.println("Walks On 2 legs");
+//    }
+//}
