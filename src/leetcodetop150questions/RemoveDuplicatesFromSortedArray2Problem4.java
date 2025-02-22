@@ -3,6 +3,7 @@ package leetcodetop150questions;
 import java.util.Scanner;
 
 public class RemoveDuplicatesFromSortedArray2Problem4 {
+//    Remove
     public static int removeDuplicatesFromSortedArray2(int arr[]){
         int i=0;
         for (int j=0;j<arr.length;j++){
